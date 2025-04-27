@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="algorithms_questions">
+        <item>What is the time complexity of binary search?</item>
+        <item>What is a greedy algorithm?</item>
+        <item>What is dynamic programming used for?</item>
+    </string-array>
+
+    <string-array name="datastructures_questions">
+        <item>Which data structure uses LIFO (Last In First Out)?</item>
+        <item>Which data structure is ideal for implementing a queue?</item>
+        <item>What is the advantage of using a linked list over arrays?</item>
+    </string-array>
+
+    <string-array name="webdevelopment_questions">
+        <item>What does HTML stand for?</item>
+        <item>Which CSS property is used to change text color?</item>
+        <item>What does JavaScript mainly add to a webpage?</item>
+    </string-array>
+
+    <string-array name="testing_questions">
+        <item>What is the purpose of unit testing?</item>
+        <item>What is regression testing?</item>
+        <item>Name one manual testing type.</item>
+    </string-array>
+
+</resources>

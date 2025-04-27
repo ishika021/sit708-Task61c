@@ -8,21 +8,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SetupActivity extends AppCompatActivity {
 
-    EditText edtName, edtAge, edtGrade;
-    Button btnNext;
+    EditText name, age, grade;
+    Button next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup);
 
-        edtName = findViewById(R.id.edtName);
-        edtAge = findViewById(R.id.edtAge);
-        edtGrade = findViewById(R.id.edtGrade);
-        btnNext = findViewById(R.id.btnNextSetup);
+        name = findViewById(R.id.edtName);
+        age = findViewById(R.id.edtAge);
+        grade = findViewById(R.id.edtGrade);
+        next = findViewById(R.id.btnNextSetup);
 
-        btnNext.setOnClickListener(v -> {
+        next.setOnClickListener(v -> {
+            // Just go to Interests page
             startActivity(new Intent(SetupActivity.this, InterestsActivity.class));
+            finish();
         });
     }
 }

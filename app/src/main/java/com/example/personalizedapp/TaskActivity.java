@@ -14,9 +14,9 @@ public class TaskActivity extends AppCompatActivity {
 
     LinearLayout taskContainer;
     Button btnSubmit;
-    String selectedInterest = "Algorithms";
+    String selectedInterest = "Algorithms"; // default
     String[] questions;
-    int[] correctAnswers;
+    int[] correctAnswers; // store correct answers
     RadioGroup[] allRadioGroups;
 
     @Override
@@ -48,6 +48,7 @@ public class TaskActivity extends AppCompatActivity {
                 int score = calculateScore();
                 Intent resultIntent = new Intent(TaskActivity.this, ResultsActivity.class);
                 resultIntent.putExtra("score", score);
+                resultIntent.putExtra("total", questions.length);
                 startActivity(resultIntent);
                 finish();
             } else {
@@ -89,7 +90,7 @@ public class TaskActivity extends AppCompatActivity {
             optionsGroup.setOrientation(RadioGroup.VERTICAL);
 
             RadioButton option1 = new RadioButton(this);
-            option1.setText("Option 1");
+            option1.setText("Option 1"); // assume first is correct
             RadioButton option2 = new RadioButton(this);
             option2.setText("Option 2");
             RadioButton option3 = new RadioButton(this);
@@ -107,10 +108,9 @@ public class TaskActivity extends AppCompatActivity {
     private int calculateScore() {
         int score = 0;
         for (int i = 0; i < allRadioGroups.length; i++) {
-            int selectedRadioButtonId = allRadioGroups[i].getCheckedRadioButtonId();
-            RadioButton selectedButton = findViewById(selectedRadioButtonId);
-            int selectedIndex = allRadioGroups[i].indexOfChild(selectedButton);
-
+            int selectedId = allRadioGroups[i].getCheckedRadioButtonId();
+            RadioButton selected = findViewById(selectedId);
+            int selectedIndex = allRadioGroups[i].indexOfChild(selected);
             if (selectedIndex == correctAnswers[i]) {
                 score++;
             }

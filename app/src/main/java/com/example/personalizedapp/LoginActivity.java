@@ -10,10 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    DatabaseHelper db;
     EditText username, password;
     Button login;
     TextView registerLink;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +21,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         db = new DatabaseHelper(this);
-
-
         username = findViewById(R.id.etUsername);
         password = findViewById(R.id.etPassword);
         login = findViewById(R.id.btnLogin);
@@ -33,18 +31,17 @@ public class LoginActivity extends AppCompatActivity {
             String pass = password.getText().toString();
 
             if(user.isEmpty() || pass.isEmpty()) {
-                Toast.makeText(LoginActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-            }
-            else if(db.checkUser(user, pass)) {
+                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            } else if (db.checkUser(user, pass)) {
                 startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                 finish();
             } else {
-                Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
             }
         });
 
-        registerLink.setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-        });
+        registerLink.setOnClickListener(v ->
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class))
+        );
     }
 }

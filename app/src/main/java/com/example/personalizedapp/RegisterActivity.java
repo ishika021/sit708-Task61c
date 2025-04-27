@@ -9,9 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    DatabaseHelper db;
     EditText username, email, password;
     Button register;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,6 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         db = new DatabaseHelper(this);
-
         username = findViewById(R.id.etUsernameRegister);
         email = findViewById(R.id.etEmailRegister);
         password = findViewById(R.id.etPasswordRegister);
@@ -33,14 +32,8 @@ public class RegisterActivity extends AppCompatActivity {
             if(user.isEmpty() || userEmail.isEmpty() || userPassword.isEmpty()) {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             } else {
-                boolean isInserted = db.insertUser(
-                        user,
-                        userEmail,
-                        userPassword,
-                        ""
-                );
-
-                if(isInserted) {
+                boolean inserted = db.insertUser(user, userEmail, userPassword, "");
+                if(inserted) {
                     Toast.makeText(this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(RegisterActivity.this, SetupActivity.class));
                     finish();

@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Algorithms -->
     <string-array name="algorithms_questions">
         <item>What is the time complexity of binary search?</item>
         <item>What is a greedy algorithm?</item>
         <item>What is dynamic programming used for?</item>
     </string-array>
 
+    <!-- Data Structures -->
     <string-array name="datastructures_questions">
-        <item>Which data structure uses LIFO (Last In First Out)?</item>
-        <item>Which data structure is ideal for implementing a queue?</item>
-        <item>What is the advantage of using a linked list over arrays?</item>
+        <item>Which data structure uses LIFO?</item>
+        <item>Which data structure is used for BFS?</item>
+        <item>What is the advantage of linked lists?</item>
     </string-array>
 
+    <!-- Web Development -->
     <string-array name="webdevelopment_questions">
         <item>What does HTML stand for?</item>
-        <item>Which CSS property is used to change text color?</item>
-        <item>What does JavaScript mainly add to a webpage?</item>
+        <item>Which CSS property changes font size?</item>
+        <item>What is JavaScript mainly used for?</item>
     </string-array>
 
+    <!-- Testing -->
     <string-array name="testing_questions">
-        <item>What is the purpose of unit testing?</item>
+        <item>What is unit testing?</item>
         <item>What is regression testing?</item>
-        <item>Name one manual testing type.</item>
+        <item>Name one type of manual testing.</item>
     </string-array>
 
 </resources>
